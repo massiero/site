@@ -2,15 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = {
     home: document.getElementById('section-home'),
     sobre: document.getElementById('section-sobre'),
-    empresa: document.getElementById('section-empresa'),
-    contato: document.getElementById('section-contato')
+    empresa: document.getElementById('section-empresa')
   };
 
   const navLinks = document.querySelectorAll('.nav-link, .btn-section, .footer-btn');
 
+  // Scroll to Top helper
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   function showSection(sectionId) {
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTop();
 
     // Hide all sections
     Object.values(sections).forEach(section => {
@@ -23,9 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (targetSection) {
       targetSection.classList.remove('section-hidden');
       targetSection.classList.add('section-visible');
-      
+
       // Update browser history
       window.history.pushState({ section: sectionId }, '', `#${sectionId}`);
+
+      // Re-trigger reveal animations for the new section
+      triggerReveal();
     }
   }
 
@@ -49,6 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Intersection Observer for Scroll Animations
+  function triggerReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(reveal => {
+      // Reset state if not already revealed in this section
+      reveal.style.opacity = "0";
+      reveal.style.transform = "translateY(20px)";
+      observer.observe(reveal);
+    });
+  }
+
   // Handle initial hash in URL
   const initialHash = window.location.hash.substring(1);
   if (sections[initialHash]) {
@@ -57,33 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSection('home');
   }
 
-  // Contact Form Handling (Mock)
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const successMsg = document.getElementById('contact-success');
-      const errorMsg = document.getElementById('contact-error');
-      
-      // Simulate loading
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerText;
-      submitBtn.innerText = 'Enviando...';
-      submitBtn.disabled = true;
-
-      // In a real scenario, we'd fetch the API. 
-      // For GitHub Pages, we might want to redirect to a form handler service 
-      // or just show a message.
-      setTimeout(() => {
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
-        successMsg.style.display = 'block';
-        contactForm.reset();
-        
-        setTimeout(() => {
-          successMsg.style.display = 'none';
-        }, 5000);
-      }, 1500);
-    });
-  }
+  // Initial trigger
+  triggerReveal();
 });
