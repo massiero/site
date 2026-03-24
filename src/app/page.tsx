@@ -99,9 +99,9 @@ export default function Home() {
                             </div>
                             <motion.h1
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-4xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8 tracking-tight"
+                                className="text-2xl lg:text-4xl font-black text-slate-900 leading-[1.1] tracking-tight mb-8"
                             >
-                                Sua escola não precisa pagar caro por <span className="text-blue-600">tecnologia de ponta.</span>
+                                Sua escola não precisa pagar caro por <span className="text-blue-600 relative inline-block">tecnologia de ponta.<div className="absolute -bottom-2 left-0 w-full h-3 bg-blue-100/50 -z-10 rounded-full" /></span>
                             </motion.h1>
                             <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
                                 A EduTIC produz sistemas robustos, de fácil uso, totalmente on-line e de baixo custo para Redes de escolas públicas e privadas.
