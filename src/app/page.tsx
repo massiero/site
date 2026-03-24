@@ -24,7 +24,7 @@ export default function Home() {
 
 
     return (
-        <main className="min-h-screen relative pt-8">
+        <main className="min-h-screen relative pt-0">
             <div className="bg-mesh" />
 
             {/* HEADER - OPTION 1: Top-pinned for maximum reliability */}
@@ -83,7 +83,7 @@ export default function Home() {
             </header>
 
             {/* HERO SECTION */}
-            <section className="relative pt-2 lg:pt-80 pb-12 lg:pb-24 px-6 overflow-x-hidden">
+            <section className="relative pt-0 lg:pt-32 pb-12 lg:pb-24 px-6 overflow-x-hidden">
                 <div className="blob -top-20 -left-20" />
                 <div className="blob top-40 -right-20 animate-[float_25s_infinite_reverse]" />
 
