@@ -24,7 +24,7 @@ export default function Home() {
 
 
     return (
-        <main className="min-h-screen relative pt-0">
+        <main className="min-h-screen relative pt-24">
             <div className="bg-mesh" />
 
             {/* HEADER - OPTION 1: Top-pinned for maximum reliability */}
