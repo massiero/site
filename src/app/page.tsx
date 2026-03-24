@@ -335,7 +335,7 @@ export default function Home() {
                             <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6">
                                 <Shield className="w-7 h-7" />
                             </div>
-                            <h5 className="text-xl font-bold text-slate-900 mb-4">Segurança Militar</h5>
+                            <h5 className="text-xl font-bold text-slate-900 mb-4">Segurança</h5>
                             <p className="text-slate-500 text-sm leading-relaxed">Seus dados e de seus alunos protegidos sob os mais rigorosos padrões de criptografia.</p>
                         </div>
 
@@ -344,7 +344,7 @@ export default function Home() {
                             <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center mb-6">
                                 <Users className="w-7 h-7" />
                             </div>
-                            <h5 className="text-xl font-bold text-slate-900 mb-4">Suporte de Elite</h5>
+                            <h5 className="text-xl font-bold text-slate-900 mb-4">Suporte</h5>
                             <p className="text-slate-500 text-sm leading-relaxed">Especialistas prontos para te ajudar em tempo real, sem tickets ou burocracia.</p>
                         </div>
                     </div>
