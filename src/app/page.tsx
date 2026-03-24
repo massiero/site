@@ -33,7 +33,7 @@ export default function Home() {
                     <nav className="glass rounded-b-3xl px-5 lg:px-8 h-16 lg:h-32 flex items-center justify-between shadow-xl relative backdrop-blur-md border-x border-b border-white/40">
                         <Link href="/" className="flex items-center gap-2 min-w-0 max-w-[40%] lg:max-w-[55%]">
                             <Image
-                                src="/logo.png"
+                                src="logo.png"
                                 alt="EduTIC Logo"
                                 width={480}
                                 height={130}
@@ -83,7 +83,7 @@ export default function Home() {
             </header>
 
             {/* HERO SECTION */}
-            <section className="relative pt-0 lg:pt-32 pb-12 lg:pb-24 px-6 overflow-x-hidden">
+            <section className="relative pt-24 lg:pt-32 pb-12 lg:pb-24 px-6 overflow-x-hidden">
                 <div className="blob -top-20 -left-20" />
                 <div className="blob top-40 -right-20 animate-[float_25s_infinite_reverse]" />
 
@@ -139,7 +139,7 @@ export default function Home() {
                             <div className="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full" />
                             <div className="relative glass rounded-[3rem] p-4 overflow-hidden border-white/40 shadow-2xl">
                                 <Image
-                                    src="/dashboard-mockup.png"
+                                    src="dashboard-mockup.png"
                                     alt="EduTIC Dashboard"
                                     width={800}
                                     height={600}
@@ -234,7 +234,7 @@ export default function Home() {
                                 <div className="mb-10 group/img relative max-w-3xl">
                                     <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-300 group-hover/img:shadow-xl group-hover/img:scale-[1.01] w-full aspect-video relative">
                                         <Image
-                                            src="/screenshot-gestao.png"
+                                            src="screenshot-gestao.png"
                                             alt="Interface da Gestão Escolar"
                                             fill
                                             className="object-cover"
@@ -290,7 +290,7 @@ export default function Home() {
                                 <div className="mb-10 group/img relative">
                                     <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-300 group-hover/img:shadow-xl group-hover/img:scale-[1.02]">
                                         <Image
-                                            src="/screenshot-horario.png"
+                                            src="screenshot-horario.png"
                                             alt="Interface do Gerador de Horários"
                                             width={600}
                                             height={300}
