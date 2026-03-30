@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, School, Clock, CheckCircle2, Users, LayoutDashboard, Shield, ChevronRight, BarChart3, GraduationCap, Zap, LayoutGrid, Building2, Medal, ExternalLink } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -21,7 +21,16 @@ const staggerContainer = {
 };
 
 export default function Home() {
+    const [gestaoLink, setGestaoLink] = useState('https://admin.edutic.com.br');
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const hostname = window.location.hostname;
+            if (hostname.includes('sistema-edu.com.br')) {
+                setGestaoLink('https://admin.sistema-edu.com.br');
+            }
+        }
+    }, []);
 
     return (
         <main className="min-h-screen relative pt-24">
@@ -33,7 +42,7 @@ export default function Home() {
                     <nav className="glass rounded-b-3xl px-5 lg:px-8 h-16 lg:h-32 flex items-center justify-between shadow-xl relative backdrop-blur-md border-x border-b border-white/40">
                         <Link href="/" className="flex items-center gap-2 min-w-0 max-w-[40%] lg:max-w-[55%]">
                             <Image
-                                src="logo.png"
+                                src="/logo.png"
                                 alt="EduTIC Logo"
                                 width={480}
                                 height={130}
@@ -54,7 +63,7 @@ export default function Home() {
 
                         {/* Desktop Actions */}
                         <div className="hidden lg:flex items-center gap-4">
-                            <a href="https://admin.edutic.com.br" className="btn-premium py-3 px-6 text-sm flex items-center gap-2">
+                            <a href={gestaoLink} className="btn-premium py-3 px-6 text-sm flex items-center gap-2">
                                 <LayoutDashboard className="w-4 h-4" /> Gestão
                             </a>
                             <a href="https://horario.edutic.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium-primary py-3 px-6 text-sm flex items-center gap-2">
@@ -67,7 +76,7 @@ export default function Home() {
 
                         {/* Mobile Actions (Direct Access) */}
                         <div className="lg:hidden flex items-center gap-1 sm:gap-2">
-                            <a href="https://admin.edutic.com.br" className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Gestão">
+                            <a href={gestaoLink} className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Gestão">
                                 <LayoutDashboard className="w-6 h-6" />
                             </a>
                             <a href="https://horario.edutic.com.br" target="_blank" rel="noopener noreferrer" className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Horário">
@@ -139,7 +148,7 @@ export default function Home() {
                             <div className="absolute inset-0 bg-blue-600/10 blur-[100px] rounded-full" />
                             <div className="relative glass rounded-[3rem] p-4 overflow-hidden border-white/40 shadow-2xl">
                                 <Image
-                                    src="dashboard-mockup.png"
+                                    src="/dashboard-mockup.png"
                                     alt="EduTIC Dashboard"
                                     width={800}
                                     height={600}
@@ -234,7 +243,7 @@ export default function Home() {
                                 <div className="mb-10 group/img relative max-w-3xl">
                                     <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-300 group-hover/img:shadow-xl group-hover/img:scale-[1.01] w-full aspect-video relative">
                                         <Image
-                                            src="screenshot-gestao.png"
+                                            src="/screenshot-gestao.png"
                                             alt="Interface da Gestão Escolar"
                                             fill
                                             className="object-cover"
@@ -256,7 +265,7 @@ export default function Home() {
                                     <a href="https://wa.me/5546984007968" target="_blank" rel="noopener noreferrer" className="btn-premium-primary flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 whitespace-nowrap">
                                         Adquira aqui <ArrowRight className="w-5 h-5" />
                                     </a>
-                                    <a href="https://admin.edutic.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-md whitespace-nowrap">
+                                    <a href={gestaoLink} target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-md whitespace-nowrap">
                                         Acessar <ExternalLink className="w-5 h-5" />
                                     </a>
                                 </div>
@@ -290,7 +299,7 @@ export default function Home() {
                                 <div className="mb-10 group/img relative">
                                     <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-300 group-hover/img:shadow-xl group-hover/img:scale-[1.02]">
                                         <Image
-                                            src="screenshot-horario.png"
+                                            src="/screenshot-horario.png"
                                             alt="Interface do Gerador de Horários"
                                             width={600}
                                             height={300}
