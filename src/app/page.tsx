@@ -66,7 +66,7 @@ export default function Home() {
                             <a href={gestaoLink} className="btn-premium py-3 px-6 text-sm flex items-center gap-2">
                                 <LayoutDashboard className="w-4 h-4" /> Gestão
                             </a>
-                            <a href="https://horario.edutic.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium-primary py-3 px-6 text-sm flex items-center gap-2">
+                            <a href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium-primary py-3 px-6 text-sm flex items-center gap-2">
                                 <Calendar className="w-4 h-4" /> Horário
                             </a>
                             <button className="btn-premium bg-slate-100 text-slate-900 hover:bg-slate-200 py-3 px-6 text-sm flex items-center gap-2">
@@ -79,7 +79,7 @@ export default function Home() {
                             <a href={gestaoLink} className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Gestão">
                                 <LayoutDashboard className="w-6 h-6" />
                             </a>
-                            <a href="https://horario.edutic.com.br" target="_blank" rel="noopener noreferrer" className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Horário">
+                            <a href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Horário">
                                 <Calendar className="w-6 h-6" />
                             </a>
                             <button className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Aluno">
@@ -319,10 +319,10 @@ export default function Home() {
                                 </div>
 
                                 <div className="flex flex-wrap lg:flex-nowrap gap-4 mt-auto pt-6">
-                                    <a href="https://horario.edutic.com.br/register" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 inline-flex items-center justify-center gap-2 px-8 py-4 whitespace-nowrap">
+                                    <a href="https://gerahorario.com.br/register" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 inline-flex items-center justify-center gap-2 px-8 py-4 whitespace-nowrap">
                                         Adquira aqui <ArrowRight className="w-5 h-5" />
                                     </a>
-                                    <a href="https://horario.edutic.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-md whitespace-nowrap">
+                                    <a href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-md whitespace-nowrap">
                                         Acessar <ExternalLink className="w-5 h-5" />
                                     </a>
                                 </div>
