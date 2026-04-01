@@ -64,27 +64,21 @@ export default function Home() {
                         {/* Desktop Actions */}
                         <div className="hidden lg:flex items-center gap-4">
                             <a href={gestaoLink} className="btn-premium py-3 px-6 text-sm flex items-center gap-2">
-                                <LayoutDashboard className="w-4 h-4" /> Gestão
+                                <LayoutDashboard className="w-4 h-4" /> Adm / Prof
                             </a>
-                            <a href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium-primary py-3 px-6 text-sm flex items-center gap-2">
-                                <Calendar className="w-4 h-4" /> Horário
-                            </a>
-                            <button className="btn-premium bg-slate-100 text-slate-900 hover:bg-slate-200 py-3 px-6 text-sm flex items-center gap-2">
+                            <a href="https://aluno.edutic.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium bg-slate-100 text-slate-900 hover:bg-slate-200 py-3 px-6 text-sm flex items-center gap-2">
                                 <GraduationCap className="w-4 h-4" /> Aluno
-                            </button>
+                            </a>
                         </div>
 
                         {/* Mobile Actions (Direct Access) */}
                         <div className="lg:hidden flex items-center gap-1 sm:gap-2">
-                            <a href={gestaoLink} className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Gestão">
+                            <a href={gestaoLink} className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Adm / Prof">
                                 <LayoutDashboard className="w-6 h-6" />
                             </a>
-                            <a href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Horário">
-                                <Calendar className="w-6 h-6" />
-                            </a>
-                            <button className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Aluno">
+                            <a href="https://aluno.edutic.com.br" target="_blank" rel="noopener noreferrer" className="p-2 text-blue-600 active:bg-blue-100 rounded-full transition-colors" title="Aluno">
                                 <GraduationCap className="w-6 h-6" />
-                            </button>
+                            </a>
                         </div>
 
                     </nav>
