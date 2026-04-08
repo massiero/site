@@ -22,6 +22,7 @@ const staggerContainer = {
 
 export default function Home() {
     const [gestaoLink, setGestaoLink] = useState('https://admin.edutic.com.br');
+    const [isGestaoModalOpen, setIsGestaoModalOpen] = useState(false);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -203,153 +204,48 @@ export default function Home() {
                     </div>
 
                     <div className="bento-grid">
-                        {/* Feature 1: Main Admin */}
-                        <div className="bento-item col-span-12 lg:col-span-6 flex flex-col group relative overflow-hidden">
+                        {/* Feature 1: Gestão Escolar */}
+                        <div
+                            onClick={() => setIsGestaoModalOpen(true)}
+                            className="bento-item col-span-12 lg:col-span-4 flex flex-col group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                        >
                             <div className="relative z-10 flex-1 flex flex-col">
                                 <div className="w-16 h-16 rounded-3xl bg-blue-600 text-white flex items-center justify-center mb-8 shadow-xl shadow-blue-600/20">
                                     <LayoutDashboard className="w-8 h-8" />
                                 </div>
-                                <h4 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">Gestão Escolar</h4>
-                                <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-2xl">
-                                    A espinha dorsal da sua escola. Das matrículas automatizadas ao controle financeiro rigoroso, tudo em um só lugar.
+                                <h4 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">Gestão escolar</h4>
+                                <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+                                    Gestão Escolar completa para sua escola.
                                 </p>
-                                <div className="grid grid-cols-2 gap-4 mb-8">
-                                    {['Diário Digital', 'Financeiro', 'Secretaria', 'Pedagógico', 'Frequência', 'Portal Aluno'].map(tag => (
-                                        <div key={tag} className="flex items-center gap-3 text-slate-900 font-bold text-sm bg-slate-50 p-3 rounded-xl border border-slate-100">
-                                            <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" /> {tag}
-                                        </div>
-                                    ))}
-                                </div>
 
-                                <div className="space-y-4 mb-10">
-                                    {[
-                                        "Sem limites de turmas ou professores.",
-                                        "Investimento: 60,00/mensal.",
-                                        "Faça um teste por 7 dias. Não gostou, devolvemos seu dinheiro."
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex items-start gap-3 text-slate-600 font-medium">
-                                            <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                                            <span>{item}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="mb-10 group/img relative max-w-3xl">
-                                    <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-300 group-hover/img:shadow-xl group-hover/img:scale-[1.01] w-full aspect-video relative">
-                                        <Image
-                                            src="/screenshot-gestao.png"
-                                            alt="Interface da Gestão Escolar"
-                                            fill
-                                            className="object-cover"
-                                        />
-                                        <a
-                                            href="/screenshot-gestao.png"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="absolute inset-0 bg-blue-600/0 group-hover/img:bg-blue-600/10 flex items-center justify-center transition-all duration-300"
-                                        >
-                                            <span className="bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-blue-600 shadow-lg opacity-0 group-hover/img:opacity-100 transition-opacity transform translate-y-4 group-hover/img:translate-y-0">
-                                                Clique para ampliar visão do sistema
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap lg:flex-nowrap gap-4 mt-auto">
-                                    <a href="https://wa.me/5546984007968" target="_blank" rel="noopener noreferrer" className="btn-premium-primary flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 whitespace-nowrap">
-                                        Adquira aqui <ArrowRight className="w-5 h-5" />
-                                    </a>
-                                    <a href={gestaoLink} target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-md whitespace-nowrap">
-                                        Acessar <ExternalLink className="w-5 h-5" />
-                                    </a>
+                                <div className="mt-auto flex items-center gap-2 text-blue-600 font-bold">
+                                    Ver detalhes <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </div>
                             <div className="absolute top-10 -right-20 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-50 group-hover:scale-125 transition-transform duration-700" />
                         </div>
 
-                        {/* Feature 2: Timetable Generator (Adquira aqui) */}
-                        <div className="bento-item col-span-12 lg:col-span-6 flex flex-col group relative overflow-hidden">
+
+                        {/* Feature 2: Gerador de Horários */}
+                        <Link href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="bento-item col-span-12 lg:col-span-4 flex flex-col group relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
                             <div className="relative z-10 flex-1 flex flex-col text-left">
                                 <div className="w-16 h-16 rounded-3xl bg-indigo-600 text-white flex items-center justify-center mb-8 shadow-xl shadow-indigo-600/20">
                                     <Calendar className="w-8 h-8" />
                                 </div>
                                 <h4 className="text-3xl font-black text-slate-900 mb-6 tracking-tight">Gerador de Horários</h4>
+                                <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+                                    Gerador de horários/grades escolares.
+                                </p>
 
-                                <div className="space-y-4 mb-8">
-                                    {[
-                                        "Nossos Algoritmos processam milhares de combinações para entregar a grade horária perfeita sem janelas ou conflitos.",
-                                        "Todo processamento é feito em nossos servidores, por isso funciona em qualquer computador.",
-                                        "Sem limites de turmas ou professores.",
-                                        "Investimento: 129,00/ano em 10x sem juros.",
-                                        "Faça um teste por 7 dias. Não gostou, devolvemos seu dinheiro."
-                                    ].map((item, i) => (
-                                        <div key={i} className="flex items-start gap-3 text-slate-600 font-medium">
-                                            <CheckCircle2 className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" />
-                                            <span>{item}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="mb-10 group/img relative">
-                                    <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all duration-300 group-hover/img:shadow-xl group-hover/img:scale-[1.02]">
-                                        <Image
-                                            src="/screenshot-horario.png"
-                                            alt="Interface do Gerador de Horários"
-                                            width={600}
-                                            height={300}
-                                            className="w-full h-auto"
-                                        />
-                                        <a
-                                            href="/screenshot-horario.png"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="absolute inset-0 bg-indigo-600/0 group-hover/img:bg-indigo-600/10 flex items-center justify-center transition-all duration-300"
-                                        >
-                                            <span className="bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-indigo-600 shadow-lg opacity-0 group-hover/img:opacity-100 transition-opacity transform translate-y-4 group-hover/img:translate-y-0">
-                                                Clique para ampliar visão do sistema
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex flex-wrap lg:flex-nowrap gap-4 mt-auto pt-6">
-                                    <a href="https://gerahorario.com.br/register" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 inline-flex items-center justify-center gap-2 px-8 py-4 whitespace-nowrap">
-                                        Adquira aqui <ArrowRight className="w-5 h-5" />
-                                    </a>
-                                    <a href="https://gerahorario.com.br" target="_blank" rel="noopener noreferrer" className="btn-premium flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 hover:bg-slate-200 shadow-md whitespace-nowrap">
-                                        Acessar <ExternalLink className="w-5 h-5" />
-                                    </a>
+                                <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold">
+                                    Conhecer mais <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </div>
                             <div className="absolute top-10 -right-20 w-80 h-80 bg-indigo-50 rounded-full blur-3xl opacity-50 group-hover:scale-125 transition-transform duration-700" />
-                        </div>
+                        </Link>
 
-                        {/* Feature 3: Modern Tech */}
-                        <div className="bento-item col-span-12 lg:col-span-4 bg-white">
-                            <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6">
-                                <Zap className="w-7 h-7" />
-                            </div>
-                            <h5 className="text-xl font-bold text-slate-900 mb-4">Alta Performance</h5>
-                            <p className="text-slate-500 text-sm leading-relaxed">Infraestrutura em nuvem redundante para garantir acesso instantâneo de qualquer lugar.</p>
-                        </div>
 
-                        {/* Feature 4: Security */}
-                        <div className="bento-item col-span-12 lg:col-span-4 bg-white">
-                            <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-6">
-                                <Shield className="w-7 h-7" />
-                            </div>
-                            <h5 className="text-xl font-bold text-slate-900 mb-4">Segurança</h5>
-                            <p className="text-slate-500 text-sm leading-relaxed">Seus dados e de seus alunos protegidos sob os mais rigorosos padrões de criptografia.</p>
-                        </div>
 
-                        {/* Feature 5: Support */}
-                        <div className="bento-item col-span-12 lg:col-span-4 bg-white">
-                            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 flex items-center justify-center mb-6">
-                                <Users className="w-7 h-7" />
-                            </div>
-                            <h5 className="text-xl font-bold text-slate-900 mb-4">Suporte</h5>
-                            <p className="text-slate-500 text-sm leading-relaxed">Especialistas prontos para te ajudar em tempo real, sem tickets ou burocracia.</p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -448,6 +344,99 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
+
+            {/* GESTÃO ESCOLAR MODAL */}
+            {isGestaoModalOpen && (
+                <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 lg:p-8">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsGestaoModalOpen(false)}
+                        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+                    />
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        className="relative w-full max-w-4xl glass rounded-[3rem] overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
+                    >
+                        <div className="p-8 lg:p-12 overflow-y-auto">
+                            <div className="flex justify-between items-start mb-8">
+                                <div className="w-16 h-16 rounded-3xl bg-blue-600 text-white flex items-center justify-center shadow-xl shadow-blue-600/20">
+                                    <LayoutDashboard className="w-8 h-8" />
+                                </div>
+                                <button
+                                    onClick={() => setIsGestaoModalOpen(false)}
+                                    className="p-2 hover:bg-slate-100 rounded-full transition-colors"
+                                >
+                                    <Zap className="w-6 h-6 text-slate-400 rotate-45" />
+                                </button>
+                            </div>
+
+                            <h2 className="text-3xl lg:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+                                EduTIC Gestão Escolar
+                            </h2>
+                            <p className="text-xl text-blue-600 font-bold mb-10">
+                                A solução definitiva para organização escolar
+                            </p>
+
+                            <div className="grid md:grid-cols-3 gap-8 mb-12">
+                                <div className="space-y-3">
+                                    <div className="p-3 rounded-2xl bg-blue-50 text-blue-600 w-fit">
+                                        <Users className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="font-black text-slate-900">Gestão Unificada</h3>
+                                    <p className="text-sm text-slate-500">Controle total da escola, ou rede de escolas</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="p-3 rounded-2xl bg-emerald-50 text-emerald-600 w-fit">
+                                        <Zap className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="font-black text-slate-900">Fácil Uso</h3>
+                                    <p className="text-sm text-slate-500">Interface simples e intuitiva</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="p-3 rounded-2xl bg-purple-50 text-purple-600 w-fit">
+                                        <Shield className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="font-black text-slate-900">Segurança</h3>
+                                    <p className="text-sm text-slate-500">E atendimento rápido</p>
+                                </div>
+                            </div>
+
+                            <div className="bg-slate-50 rounded-[2rem] p-8 mb-10 border border-slate-100">
+                                <p className="text-lg text-slate-600 leading-relaxed italic mb-8">
+                                    "A espinha dorsal da sua escola. Das matrículas automatizadas ao controle financeiro rigoroso, tudo em um só lugar."
+                                </p>
+
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                    {['Diário Digital', 'Financeiro', 'Secretaria', 'Pedagógico', 'Frequência', 'Portal Aluno'].map(tag => (
+                                        <div key={tag} className="flex items-center gap-2 text-slate-900 font-bold text-xs bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" /> {tag}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 p-8 rounded-[2rem] bg-blue-600 text-white shadow-xl shadow-blue-600/20">
+                                <div className="space-y-2 text-center lg:text-left">
+                                    <div className="text-blue-100 text-sm font-bold uppercase tracking-widest">Oferta exclusiva</div>
+                                    <div className="text-3xl font-black">R$ 60,00/mensal</div>
+                                    <p className="text-blue-100 text-sm font-medium">Sem limites de turmas ou professores.</p>
+                                </div>
+                                <div className="flex flex-col gap-3 w-full lg:w-auto">
+                                    <a href="https://wa.me/5546984007968" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-black text-center transition-transform hover:scale-105 active:scale-95 shadow-lg">
+                                        Adquirir Agora
+                                    </a>
+                                    <p className="text-[10px] text-center text-blue-100 font-bold uppercase tracking-widest">
+                                        Teste por 7 dias ou seu dinheiro de volta
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            )}
         </main>
     );
 }
