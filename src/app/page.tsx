@@ -170,7 +170,7 @@ export default function Home() {
                                     <BarChart3 className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Retenção</div>
+                                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Desempenho</div>
                                     <div className="text-xl font-black text-slate-900">+24%</div>
                                 </div>
                             </motion.div>
@@ -197,7 +197,7 @@ export default function Home() {
                         </div>
                         <div>
                             <div className="text-2xl font-black text-blue-600 mb-2">24/7</div>
-                            <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Suporte Vitalício</div>
+                            <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Suporte</div>
                         </div>
                     </div>
                 </div>
@@ -430,8 +430,6 @@ export default function Home() {
 
                             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 p-8 rounded-[2rem] bg-blue-600 text-white shadow-xl shadow-blue-600/20">
                                 <div className="space-y-2 text-center lg:text-left">
-                                    <div className="text-blue-100 text-sm font-bold uppercase tracking-widest">Oferta exclusiva</div>
-                                    <div className="text-3xl font-black">R$ 60,00/mensal</div>
                                     <p className="text-blue-100 text-sm font-medium">Sem limites de turmas ou professores.</p>
                                 </div>
                                 <div className="flex flex-col gap-3 w-full lg:w-auto">
